@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    background-color: rgba(255, 255, 255, 0.979);
+    overflow: hidden;
+    font-family: math;
+}
+.container{
+    height: 100%;
+    background-color: black;
+}
+
+.words {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
+    overflow: hidden;
+}
+
+.words h1 {
+    color: greenyellow;
+    animation: fall 1.4s linear infinite;
+    position: relative;
+    translate: 0 -10vh;
+}
+
+.layer {
+    display: grid;
+    place-content: center;
+    /* background-color: rgb(255 255 255 / .0); */
+    backdrop-filter: blur(2px);
+    height: 100dvh;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    padding: 15px;
+}
+
+.layer h3 {
+    z-index: 2;
+    padding: 10px;
+    position: relative;
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+@keyframes fall {
+    0% {
+        translate: 0 -10vh;
+        scale: 0;
+    }
+
+    10% {
+        scale: 1;
+    }
+
+    100% {
+        /* rotate: 360deg; */
+        text-shadow: 5px 4px 5px rgb(255, 255, 255);
+        scale: 0;
+        opacity: 0;
+        translate: 0 100vh;
+    }
+}
+ .dots{
+    animation: blink 1s linear infinite;
+}
+.dots:nth-of-type(1){
+    animation-delay: 0.3s;
+}
+.dots:nth-of-type(2){
+    animation-delay: 0.6s;
+}
+.dots:nth-of-type(3){
+    animation-delay: 0.9s;
+}
+@keyframes blink {
+    from{
+        color: rgb(255, 255, 255);
+    }
+    to{
+        color: greenyellow;
+    }
+}
